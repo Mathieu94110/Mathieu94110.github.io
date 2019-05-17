@@ -1,0 +1,304 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: : Sans-Serif;
+    
+}
+
+
+
+nav {
+    width: 100%;
+    background: black;
+position: relative;
+z-index: 500;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 0px !important;
+
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+
+}
+
+ul li:hover {
+    background: yellow;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.toggle {
+    width: 100%;
+    padding: 10px 20px;
+    background: black;
+    text-align: right;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 30px;
+    display: none;
+
+}
+
+
+@media (max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    ul {
+        width: 100%;
+        display: none;
+    	
+    }
+
+    ul li {
+        display: block;
+        text-align: center;
+    }
+
+}
+
+.active {
+    display: block;
+}
+
+
+
+#slide1,
+#slide2,
+#slide3
+#slide4 {
+    height: 100vh;
+ 
+}
+#slide4{
+	display: flex;
+}
+
+
+#slide1 {
+    background: url(photo1.jpg)center 0 no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+
+}
+.presentation{
+	color: black;
+font-size: 1.5vw;
+padding-right:10%;
+}
+.presentation h2{
+	font-size: 2vw;
+}
+.presentation h3{
+	font-size: 1.7vw;
+}
+
+
+#slide2 {
+    background: url(photo2.jpg)center 0 no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    padding: 5%;
+
+}
+.container{
+  height: 90vh;
+  display: grid;
+  
+    flex-direction: column;
+    justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+
+
+.photo-pres {
+    flex: 1;
+    display: flex;
+    
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.img-pres {
+    width: 90%;
+    display: flex;
+
+
+}
+
+
+
+
+.cell {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+
+  margin:4px;
+  background: url(british-columbia.jpg) no-repeat center center;
+  background-size:cover;
+  transition: width 1s, height 1s;
+  
+}
+
+.cell:hover{
+	opacity:0.7;
+	width:90%;
+	height: 90%;
+
+}
+
+.texte1 {
+    flex: 1;
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.texte1 div {
+    position: relative;
+   
+}
+
+
+
+#slide3 {
+    
+    height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#slide1 .slide_inside {
+    text-align: center;
+    padding-top: 20%;
+   
+}
+
+#slide3 .slide_inside {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    padding: 50px;
+}
+#slide4{
+	width: 100%;
+	display: flex;
+justify-content: space-between;
+	color: black;
+	height: 50vh;
+	background-color: #edf5e3;
+ 
+ 	padding-left: 15%;
+ 	padding-right:15%;
+ 	padding-top: 5%;
+}
+
+
+
+.slide_inside {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slide1__title {
+    color: #183d40;
+ 
+ 
+    
+    padding-top: 7em;
+    text-align: center;
+   top: 50%; 
+  transform: translateY(-50%); 
+    font: inherit;
+    font-size: 5vw;
+
+}
+
+#container {
+    margin: 20px;
+    width: 200px;
+    height: 100px;
+}
+
+
+
+/*Progress-bars */
+.progress-bar {
+
+    background: url(code.jpg)center 0 no-repeat fixed;
+    background-size: cover;
+    height: 50vh;
+  
+}
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Expletus+Sans);
+
+
+
+
+.tmp {
+
+    width: 70%;
+
+    list-style-type: none;
+
+    padding-right: 5.3333333%;
+}
+
+
+
+.progress-position {
+    display: flex;
+    justify-content: center;
+
+}
+
+progress{
+	margin:5px;
+	width: 200px;
+}
+
+.contact_texte{
+	flex:1;
+width: 100%;
+font-size: 2vw;
+
+}
+
+}
+.contact_form{
+	flex:1;
+width: 100%;
+font-size: 3vw;
+background-color: black;
+}
+
+
+
