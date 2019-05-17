@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    
 </head>
 
 <body>
@@ -16,15 +15,13 @@
         <div class="toggle">
             <i class="fas fa-align-justify menu" aria-hidden="true"></i>
         </div>
-
         <ul>
-            <li><a href="#"onclick="scrollDown()">Accueil</a></li>
-            <li><a href="#"onclick="scrollDown()">Présentation</a></li>
-            <li><a href="#"onclick="scrollDown()">Compétences et réalisations</a></li>
-            <li><a href="#"onclick="scrollDown()">Contact</a></li>
+            <li><a href="#">Accueil</a></li>
+            <li onclick="scrollDown()"><a href="#">Présentation</a></li>
+            <li onclick="scrollDown1()"><a href="#">Compétences</a></li>
+            <li onclick="scrollDown2()"><a href="#">Réalisations</a></li>
+            <li onclick="scrollDown3()"><a href="#">Contact</a></li>
         </ul>
-
-
     </nav>
     <div id="slide1">
         <p class="slide1__title">Bienvenue sur mon PORTFOLIO</p>
@@ -40,9 +37,7 @@
                 <h3>JE SUIS MATHIEU ENAULT </h3>
                 <p>J'ai 30 ans et je suis diplomé d'un BTS Banque , ayant travaillé de nombreuses années dans l'univers de la vente , j'ai fait le choix fin 2018 de me reconvertir dans le domaine du developpement web qui est plus proche de mes réels aspirations.
                     Ayant par le passé éffectué quelques montages photo et video avec des logiciels comme Photoshop ou movie-maker , j'ai toujours eu cette frustation de ne pas pouvoir insérer mes projets sur des vrais sites webs.
-                  
             </div>
-
         </div>
     </div>
     <div id="slide3">
@@ -95,87 +90,63 @@
                         </progress>
                     </div>
                 </div>
-                
             </div>
-
-
-
-
-            </div>
-        </div>
-
-
-    <div id="slide2">
-       
-        <div class="container">
-          <div class="cell cell-1"></div>
-          <div class="cell cell-2"></div>
-          <div class="cell cell-3"></div>
-          <div class="cell cell-4"></div>
-          <div class="cell cell-5"></div>
-          <div class="cell cell-6"></div>
         </div>
     </div>
-    
-    
-         
-        <div id="slide4">
-<div class="contact_texte">   
-<p>EMAIL</p>
-<p>me94110@gmail.com</p>
-<p>TELEPHONE</p>
-<p>0615218101</p>
-</div>
-
-
-<div class="contact_form">
-            <form id="myform" class="cssform" action="">
-
-    <p><label for="user"></label>
-    <input class="nom" type="text" id="user" value="Votre Nom" /></p>
-
-    <p><label for="emailaddress"></label>
-    <input class="email" type="text" id="emailaddress" value="Votre Email" /></p>
-
-    <p><label for="comments"></label>
-    <textarea id="comments" rows="5" cols="50" value="Your Message
-    "></textarea></p>
-
-    <p><div style="margin-left:5px;">
-        <input type="submit" value="Envoyer" />
-        
-    </div></p>
-</form>
-<div class="slide_inside"></div>
-</div>
-            
-        
-
-
+    <div id="slide2">
+        <div class="container">
+            <div class="cell cell-1"></div>
+            <div class="cell cell-2"></div>
+            <div class="cell cell-3"></div>
+            <div class="cell cell-4"></div>
+            <div class="cell cell-5"></div>
+            <div class="cell cell-6"></div>
         </div>
-        
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $('.menu').click(function(){
-                $('ul').toggleClass('active');
-            })
+    </div>
+    <div id="slide4">
+        <div class="contact_texte">
+            <p>EMAIL</p>
+            <p>me94110@gmail.com</p>
+            <p>TELEPHONE</p>
+            <p>0615218101</p>
+        </div>
+        <div class="contact_form">
+            <form id="myform" class="cssform" action="https://formspree.io/email@domain.tld" method="POST" ">
+                <p><label for="user"></label>
+                    <input class="nom" type="text"  name="name" id="user" value="Votre Nom" /></p>
+                <p><label for="emailaddress"></label>
+                    <input class="email" type="text" name="name" id="emailaddress" value="Votre Email" /></p>
+                <p><label for="comments"></label>
+                    <textarea id="comments" name="name" rows="5" cols="50" value="Your Message
+    "></textarea></p>
+                <p>
+                    <div style="margin-left:5px;">
+                        <input type="submit" value="Envoyer" />
+                    </div>
+                </p>
+            </form>
+            <div class="slide_inside"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.menu').click(function() {
+            $('ul').toggleClass('active');
         })
-        </script>
-      
-       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
-        
-       <!-- $("élément").parallax(xPosition, adjuster, inertia, outerHeight);-->
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $('#slide1').parallax("center", 0, 0.1, true);
-            $('#slide2').parallax("center", 900, 0.1, true);
-            $('#slide3').parallax("center", 2900, 0.1, true);
-        })
-        </script>
-    
-
+    })
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
+    <!-- $("élément").parallax(xPosition, adjuster, inertia, outerHeight);-->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#slide1').parallax("center", 0, 0.1, true);
+        $('#slide2').parallax("center", 900, 0.1, true);
+        $('#slide3').parallax("center", 2900, 0.1, true);
+    })
+    </script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
