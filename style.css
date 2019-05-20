@@ -81,9 +81,9 @@ ul li a {
 
 #slide1,
 #slide2,
-#slide3
+#slide3,
 #slide4 {
-    height: 100vh;
+    height: 100%;
  
 }
 #slide4{
@@ -248,11 +248,12 @@ justify-content: space-between;
 
 
 /*Progress-bars */
-.progress-bar {
-
+.progress-bare {
+    height: 100%;
     background: url(code.jpg)center 0 no-repeat fixed;
     background-size: cover;
-    height: 50vh;
+
+
   
 }
 
