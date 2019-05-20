@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
 
                 <div class="container-contact100-form-btn">
-                    <button class="contact100-form-btn">
+                  //  <button class="contact100-form-btn" onsubmit="sendForm();">
                         Send Email
                     </button>
                 </div>
@@ -221,6 +221,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+</script>
+<script>
+dataLayer.push({
+                'event' : 'santianoEvent',
+                'eventCategory' : 'Utilisateur',
+                'eventAction': 'Formulaire de contact',
+                'eventLabel': 'Message envoyé',
+                'eventValue': '1'
+            });
+function sendForm()
+{
+    alert('submit');
+}
 </script>
 </body>
 
