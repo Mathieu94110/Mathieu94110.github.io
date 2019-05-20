@@ -223,16 +223,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   gtag('config', 'UA-23581568-13');
 </script>
 <script>
-dataLayer.push({
-                
-            });
 function sendForm()
 {
-    'event' : 'santianoEvent',
+    alert('submit');
+dataLayer.push({
+                'event' : 'santianoEvent',
                 'eventCategory' : 'Utilisateur',
                 'eventAction': 'Formulaire de contact',
                 'eventLabel': 'Message envoyé',
-                'eventValue': '1';
+                'eventValue': '1'
+            });
 }
 </script>
 </body>
