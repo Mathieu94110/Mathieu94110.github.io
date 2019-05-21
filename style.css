@@ -4,8 +4,15 @@ body {
     font-family: : Sans-Serif;
     
 }
-
-
+.container img{
+    
+    max-height: 100%;
+    max-width: auto;
+margin:auto;
+}
+.img-pres{
+    width: 50%;
+}
 
 nav {
     width: 100%;
@@ -34,7 +41,7 @@ ul li {
 }
 
 ul li:hover {
-    background: yellow;
+    background: blue;
 }
 
 ul li a {
@@ -53,7 +60,10 @@ ul li a {
     display: none;
 
 }
-
+.conteneur-pres{
+    display: flex;
+     background-color: #edf5e3;
+}
 
 @media (max-width: 768px) {
     .toggle {
@@ -91,41 +101,75 @@ ul li a {
 }
 
 
-#slide1 {
-    background: url(photo1.jpg)center 0 no-repeat fixed;
-    background-size: cover;
+.background {
+    width: 100%;
     height: 100vh;
-
+    position: relative;
+    background-color:#232057;
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.background h1 {
+    position: absolute;
+    color: white;
+    font-size: 5vw;
+}
+
 .presentation{
 	color: black;
 font-size: 1.5vw;
 padding-right:10%;
+text-align: left;
 }
 .presentation h2{
-	font-size: 2vw;
+	font-size: 3vw;
+    color: white;
 }
 .presentation h3{
-	font-size: 1.7vw;
+	font-size: 2vw;
 }
 
+    
+    
+
+.text_pres{
+
+    font-size: 1.5vw;
+}
 
 #slide2 {
-    background: url(photo2.jpg)center 0 no-repeat fixed;
+    background: url(milky-way.jpg)center 0 no-repeat fixed;
     background-size: cover;
     height: 100vh;
     width: 100%;
-    padding: 5%;
-
+    padding: 0% 5% 5% 5%;
+    display: flex;
+    flex-direction: column;
+    
 }
+#slide2 h2{
+    color: white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size:4vw;
+    text-align: center;
+    height: 100%;
+}
+
+
+
 .container{
-  height: 90vh;
+  height: 80vh;
   display: grid;
-  
+  z-index: 3;
     flex-direction: column;
     justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-rows: 200px;
 }
 
 
@@ -175,7 +219,7 @@ padding-right:10%;
     
     display:flex;
     flex-direction: column;
-    justify-content: center;
+
 
 }
 
@@ -226,17 +270,14 @@ justify-content: space-between;
 }
 
 .slide1__title {
-    color: #183d40;
- 
- 
-    
+    color: white;
     padding-top: 7em;
     text-align: center;
    top: 50%; 
-  transform: translateY(-50%); 
+  transform: translateY(-40%); 
     font: inherit;
     font-size: 5vw;
-
+    z-index: 3;
 }
 
 #container {
@@ -252,8 +293,10 @@ justify-content: space-between;
     height: 100%;
     background: url(code.jpg)center 0 no-repeat fixed;
     background-size: cover;
-
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   
 }
 
@@ -266,15 +309,22 @@ justify-content: space-between;
 
 .tmp {
 
-    width: 70%;
-
+    
     list-style-type: none;
-
-    padding-right: 5.3333333%;
+    
+    
 }
+.progress-bare h2{
+    font-size: 3.5vw;
+    color: white;
+}
+.progress-bare h3{
+ font-size: 2vw;
+}
+.progress-bare-titres{
+    height: 100%;
 
-
-
+}
 .progress-position {
     display: flex;
     justify-content: center;
@@ -282,14 +332,14 @@ justify-content: space-between;
 }
 
 progress{
-	margin:5px;
-	width: 200px;
+	margin:2vw;
+	width: 30vw;
+    height: 2vw;
 }
 
 .contact_texte{
 	flex:1;
 width: 100%;
-font-size: 2vw;
 
 }
 
@@ -299,6 +349,10 @@ font-size: 2vw;
 width: 100%;
 font-size: 3vw;
 background-color: black;
+}
+.langages p{
+font-weight: bold;
+font-size:2vw;
 }
 
 
