@@ -61,9 +61,33 @@ ul li a {
 
 }
 .conteneur-pres{
-    display: flex;
-     background-color: #edf5e3;
+    display: block;
+     background-color: black;
+     text-align: center;
 }
+.html5{
+
+}
+.css3{
+
+}
+.javascript{
+
+}
+.angular{
+
+}
+.jquery{
+
+}
+.php{
+
+}
+
+
+
+
+
 
 @media (max-width: 768px) {
     .toggle {
@@ -118,20 +142,50 @@ display: flex;
 }
 
 .presentation{
-	color: black;
+	color: white;
 font-size: 1.5vw;
-padding-right:10%;
-text-align: left;
+flex: 1;
+    display:flex;
+    flex-direction: column;
+   align-items: center;
+   text-align: center;
+   margin: auto;
 }
+
+
+.texte1 div {
+    position: relative;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .presentation h2{
 	font-size: 3vw;
     color: white;
+
 }
 .presentation h3{
 	font-size: 2vw;
 }
-
-    
+.presentation-titre{
+    display: flex;
+    text-align: center;
+}
+.presentation-reste{
+    display: flex;
+}   
     
 
 .text_pres{
@@ -178,15 +232,15 @@ text-align: left;
 .photo-pres {
     flex: 1;
     display: flex;
-    
+    align-items: center;
     flex-direction: column;
-
     justify-content: center;
 
 }
 
 .img-pres {
-    width: 90%;
+    max-width: 100%;
+    height: auto;
     display: flex;
 
 
@@ -214,19 +268,6 @@ text-align: left;
 
 }
 
-.texte1 {
-    flex: 1;
-    
-    display:flex;
-    flex-direction: column;
-
-
-}
-
-.texte1 div {
-    position: relative;
-   
-}
 
 
 
@@ -354,6 +395,15 @@ background-color: black;
 font-weight: bold;
 font-size:2vw;
 }
-
-
-
+.en-gras{
+    font-weight: bold;
+font-size: 3vw;
+}
+.logos-form{
+    display: flex;
+padding-left: 5%;
+font-size: 3vw;
+}
+.mes-coordonnees{
+    font-size: 3vw;
+}
