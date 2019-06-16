@@ -2,6 +2,39 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*********************
+VARIABLES
+**********************/
+$link-color:white;
+$link-hover:#00aedb;
+$link-vertical-padding:20px;
+/*Controls Menu top & bottom padding*/
+$link-horizontal-padding:25px;
+/*Contols Menu left & right padding*/
+$menu-background: #353535;
+/*Control Menu Color Scheme*/
+
+/*********************
+RESPONSIVE BREAKPOINTS
+**********************/
+@mixin breakpoint($point) {
+    @if $point==1300 {
+        @media (max-width: 1300px) {
+            @content;
+        }
+    }
+
+    @else if $point==715 {
+        @media (max-width: 715px) {
+            @content;
+        }
+    }
+}
+
+
+
+
+
 
 @import "compass/reset";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -23,74 +56,160 @@ header {
     font-family: 'Roboto Slab', serif;
     width: 100%;
     height: 100vh;
-   background-color: black;
+    background-color: black;
     background-size: cover;
 
-
     nav {
-        position: fixed;
         width: 100%;
-        line-height: 60px;
-margin: 0;
-      padding: 0;
 
-     
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, .35);
 
-       
+        @include breakpoint(715) {
+            margin: 65px 0 0 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            background: darken(#262626, 5%);
+        }
+    }
 
-        nav.black {
-            background: #000;
-      
-}
+    nav ul {
+        margin: 0 auto;
+        width: 100%;
+        list-style: none;
 
-
-
-        ul {
-
-            line-height: 60px;
-            list-style: none;
-            background: rgba(0, 0, 0, 0);
-            
-            color: #fff;
-            padding: 0;
-            text-align: center;
+        @include breakpoint(715) {
             margin: 0;
-          
-            transition: 1s;
-  
+            padding: 0;
+            width: 100%;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .7);
+            z-index: 15;
 
-            li {
-                display: inline-block;
-               padding: 16px 40px;
-                color: #fff;
-            
-                &:hover{
-                  background-color: red;
+
+
+        }
+
+        li {
+            float: left;
+            width: 20%;
+            position: relative;
+            z-index: 1;
+
+            @include breakpoint(715) {
+                float: none;
+                position: relative;
+                margin: 0;
+                text-align: center;
+                margin: auto;
+                align-items: center;
+            }
+
+            a {
+                display: block;
+                padding: $link-vertical-padding $link-horizontal-padding;
+                text-align: center;
+                color: $link-color;
+                text-decoration: none;
+                border-right: 1px solid darken($menu-background, 10%);
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
+                transition: all 0.1s ease;
+
+                &:hover {
+                    background: darken($menu-background, 10%);
+                    color: $link-hover;
+                    transition: all 0.2s ease;
+
                 }
-                a{
-                    text-decoration: none;
-                    color: #fff;
-                    font-size: 16px;
- 
+
+                @include breakpoint(715) {
+                    display: table;
+                    margin: 0;
+                    padding: 15px 2px;
+                    color: white;
+                    border-top: 1px solid rgba(0, 0, 0, .15);
+                    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, .03);
+                    text-shadow: none;
+                    width: 100%;
+
                 }
             }
 
+            &:hover ul {
+                opacity: 1;
+                max-height: 1000px;
+                transition: all 0.3s ease;
+
+                @include breakpoint(715) {
+                    max-height: 0;
+
+                }
+            }
+
+
         }
+    }
+
+
+    /***************************
+MOBILE NAV STYLES
+***************************/
+    .mobile {
+        display: none;
+        margin: 0;
+        padding: 20px 15px;
+        background: linear-gradient(to bottom, #353535 0%, #262626 100%);
+        position: absolute;
+        color: white;
+        text-decoration: none;
+        top: 15px;
+        right: 15px;
+        line-height: 0;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, .35);
+
+        @include breakpoint(715) {
+            display: table;
+        }
+    }
+
+    .active {
+        max-height: 9000px !important;
+        transition: all 1s ease;
+
 
 
 
 
     }
+
+    @include breakpoint(715) {
+        .arrow {
+            display: block;
+            background: url(../images/arrow.png) no-repeat;
+            float: right;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            right: 25px;
+            top: 10px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .rotate {
+            transition: all 0.3s ease;
+            -webkit-transform: rotate(-180deg);
+            -moz-transform: rotate(-180deg);
+            -o-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+    }
+
 }
 
-/*
-.content {
-      width: 94%;
-      margin: 4em auto;
-      font-size: 20px;
-      line-height: 30px;
-      text-align: justify;
-}*/
+
 
 
 @keyframes progressAnimationStrike {
@@ -104,12 +223,12 @@ margin: 0;
 }
 
 .contenu-accueil {
-  
-   padding-top: 6%;
+
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 10%;
+
     text-align: center;
     color: white;
     height: 100%;
@@ -117,7 +236,7 @@ margin: 0;
     position: absolute;
     z-index: 100;
     align-items: center;
-    
+
 
 
     .texte-contenu-accueil {
@@ -146,10 +265,7 @@ margin: 0;
         }
     }
 
-    .logos {
-        height: 20%;
-        margin-top: 2.5%;
-    }
+
 }
 
 .love {
@@ -227,7 +343,7 @@ margin: 0;
             width: 50%;
             align-items: center;
             text-align: center;
-            margin: auto;
+
             height: 100%;
             background: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
             display: flex;
@@ -236,14 +352,11 @@ margin: 0;
 
             img {
                 max-width: 25%;
-                border: 1px black solid;
-                border-radius: 50%;
-                width: 250px;
-                height: 250px;
-                position: relative;
+
+
+
                 cursor: pointer;
 
-                transition: left 5s cubic-bezier(0, 0, 1, 1);
 
             }
         }
@@ -342,7 +455,7 @@ margin: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                z-index: 600;
+                z-index: 1;
                 align-items: center;
 
                 margin: 0 auto;
@@ -429,7 +542,7 @@ margin: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                z-index: 600;
+                z-index: 1;
 
 
 
@@ -576,7 +689,7 @@ margin: 0;
     flex-direction: column;
     font-family: 'Roboto Slab', serif;
 
-    
+
     .presentation-titre {
         display: flex;
         flex-direction: column;
@@ -586,7 +699,7 @@ margin: 0;
 
         h2 {
             font-size: 4vw;
-        color: black;
+            color: black;
         }
     }
 
@@ -653,71 +766,55 @@ margin: 0;
 
 
 
-@media(max-width: 1000px) {
+// formulaire de contact 
 
-   nav{
-    height: 100vh;
-   }
 
-    nav ul {
-        
-        background: #000;
-   display: block;
-  height: 100vh;
-   margin: auto;
-    }
 
-    
-    .showing {
-        max-height: 34em;
-    }
 
-    nav ul li {
-        
-        width: 100%;
-        padding: 24px;
-        text-align: left;
-    
-    }
 
-  
+
+.logos {
+    width: 35%;
+    height: 30%;
+    float: left;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    text-align: center;
 
 }
-
-// formulaire de contact //
-
-
 
 .formulaire {
-    width: 100%;
-    height: 75vh;
-    padding:0% 5%;
+
+    width: 65%;
+    height: 50%;
+    float: right;
+    margin-top: 50vh;
+    transform: translateY(-65%);
+}
+
+.presentation-titre {
     display: flex;
-    flex-direction:column;
-    justify-content:center;
-}
-.presentation-titre{
-  display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: #edf5e3;
-        height: 25vh;
-        text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #edf5e3;
+    height: 25vh;
+    text-align: center;
 
 
-h2 {
-            font-size: 4vw;
+    h2 {
+        font-size: 4vw;
         color: black;
-        }
+    }
 
 
 }
+
 .contact-form {
     display: flex;
-    max-width: 550px;
-    margin: 0 auto;
+    width: 50%;
+
     background: rgba(0, 0, 0, 0.8);
-    
+
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -774,17 +871,42 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
+    header#particles-js {
+        height: 400px;
+    }
+
+    .contenu-accueil {
+        height: 320px;
+
+        a {
+            padding-right: 30%;
+        }
+
+
+    }
+
+
+
+
+
+    .logos {
+        display: block;
+
+    }
+
+
     .contact-form {
         flex-direction: column;
+        width: 100%;
     }
 
     .msg textarea {
-        height: 80px;
+        height: 60%;
     }
 
     .input-fields,
     .msg {
-        width: 100%;
+        width: 80%;
     }
 }
 

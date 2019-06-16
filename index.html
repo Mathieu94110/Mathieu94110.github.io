@@ -20,20 +20,21 @@
     
     <div class="wrapper">
         <header id="particles-js">
-            <nav>
-             
-                
-                <div class="menu customMenu">
-                    <ul>
-                      <a href="#"><li>Accueil</li></a>
-                        <li><a href="#">A propos de moi</a></li>
-                        <li><a href="#">Compétences</a></li>
-                        <li><a href="#">Réalisations</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="contenu-accueil">
+           <a class="mobile" href="#">&#9776;</a>
+        <nav>
+            <ul>
+                <li><a href="#" >Accueil</a></li>
+                <li>
+                    <a href="#" >Présentation</a>
+                </li>
+                <li><a href="#">Compétences</a></li>
+                <li><a href="#">Réalisations</a>
+                </li>
+                <li onclick="scroll()"><a href="#">Contact</a></li>
+            </ul>
+            <div style="clear:both;"></div>
+        </nav>            
+        <div class="contenu-accueil">
                 
                 <div class="texte-contenu-accueil">
                 <h2>MATHIEU ENAULT</h2>
@@ -41,11 +42,7 @@
                 <h2>EN RECHERCHE D'UN STAGE DE 1 A 6 MOIS <BR>EN REGION PARISIENNE</h2>
                 </div>
                 <a href="https://raw.githubusercontent.com/Mathieu94110/curriculum-vitae/7ecef50258e5bc8df4cbda20eb6f7a390cda93c3/CV%20mathieu%20Enault%202.pdf"><button type="button">Téléchargez mon CV</button></a>
-                <div class="logos">
-                    <a href="http://www.google.com"><img class="linkedin" alt="logo linkedin" src="https://img.icons8.com/nolan/64/000000/linkedin.png"></a>
-                    <a href="http://www.facebook.com/mathieu.enault"><img class="facebook" alt="logo facebook" src="https://img.icons8.com/nolan/64/000000/facebook.png"></a>
-                    <a href="https://github.com/Mathieu94110"><img class="github" alt="logo github" src="https://img.icons8.com/nolan/64/000000/github.png"></a>
-                </div>
+                
             </div>
         </header>
         <div id="conteneur-pres">
@@ -55,7 +52,7 @@
             </div>
             <div class="photo-text">
                 <div class="moi">
-                    <img src="moi.jpeg" onclick="this.style.left='450px'">
+                    <img src="moi.jpeg">
                 </div>
                 <div class="presentation">
                     <p class="text_pres">Je m'appelle Mathieu Enault, j'ai 30 ans, et je suis actuellement en formation à la coding-academy d'Epitech, pour la période du 18 Février au 24 Juin 2019.
@@ -125,17 +122,34 @@
 
             
             <div class="container">
-                <div class="cell cell-1"><img src="Maquette1min.png" alt="maquette responsive 1" class="imageIllustration" id="maquette1" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette1.png')"></div>
-                <div class="cell cell-2"><img src="Maquette2min.png" alt="maquette animation" class="imageIllustration" id="maquette2" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette2.png')"></div>
+                <div class="cell cell-1"><img src="Maquette1min.png" alt="maquette responsive 1" class="imageIllustration" id="maquette1" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette1.png')">
+
+    
+
+                </div>
+                
+                <div class="cell cell-2"><img src="travel agency-min.png" alt="maquette animation" class="imageIllustration" id="maquette2" data-toggle="modal" data-target="#exampleModal" onclick="openModal('travel agency.png')"></div>
+                
                 <div class="cell cell-3"><img src="Maquette3min.png" alt="maquette reesponsive 2" class="imageIllustration" id="maquette3" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette3.png')"></div>
-                <div class="cell cell-4"><img src="Maquette4min.png" alt="maquette w3c" class="imageIllustration" id="maquette4" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette4.png')"></div>
-                <div class="cell cell-5"><img src="Maquette5min.png" alt="maquette MATERIALIZE" class="imageIllustration" id="maquette5" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette5.png')"></div>
-                <div class="cell cell-6"><img src="Maquette6min.png" alt="maquette GSAP" class="imageIllustration" id="maquette5" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette6.png')"></div>
+                
+                <div class="cell cell-4"><img src="Maquette5min.png" alt="maquette w3c" class="imageIllustration" id="maquette4" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Maquette5.png')"></div>
+                
+                <div class="cell cell-5"><img src="to-do-list-min.png" alt="maquette MATERIALIZE" class="imageIllustration" id="maquette5" data-toggle="modal" data-target="#exampleModal" onclick="openModal('to-do-list.png')"></div>
+                
+                <div class="cell cell-6"><img src="Sans titre.png" alt="maquette GSAP" class="imageIllustration" id="maquette5" data-toggle="modal" data-target="#exampleModal" onclick="openModal('Gsap-min.png')"></div>
+            
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
+                      <div class="modal-header">
+                        <a href=https://github.com/Mathieu94110?tab=repositories class="btn btn-info">Voir code source</a>
+                        <!--<button type="button" class="btn btn-primary" href="google.com">Voir code source</button>-->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
                         <div class="modal-body">
                             <img src="" id="img-modal" style="width:100%">
                         </div>
@@ -143,11 +157,20 @@
                 </div>
             </div>
         </div>
-        <footer id="particles-js">
+        <footer>
              <div class="presentation-titre">
                 
                 <h2>Contact</h2>
             </div>
+            
+            <div class="logos">
+                    <a href="http://www.google.com"><img class="linkedin" alt="logo linkedin" src="https://img.icons8.com/nolan/64/000000/linkedin.png"></a>
+                    <a href="http://www.facebook.com/mathieu.enault"><img class="facebook" alt="logo facebook" src="https://img.icons8.com/nolan/64/000000/facebook.png"></a>
+                    <a href="https://github.com/Mathieu94110"><img class="github" alt="logo github" src="https://img.icons8.com/nolan/64/000000/github.png"></a>
+                </div>
+            
+
+
             <div class="formulaire">
                 <div class="contact-form">
                     <div class="input-fields">
@@ -162,9 +185,11 @@
                     </div>
                 </div>
             </div>
+      
         </footer>
     </div>
     <script src="script.js"></script>
+    <script type="text/javascript" src="js/nav.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script type="text/javascript">
     

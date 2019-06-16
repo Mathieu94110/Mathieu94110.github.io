@@ -1689,3 +1689,10 @@ function anonyme(){
   let facebook=document.getElementById("texte")
   texte.innerHTML = "Hello world"
 }
+//nav active mobile//
+$(document).ready(function(){$(".mobile").click(function(){$("nav").toggleClass("active")}),$("nav ul li ul").each(function(){$(this).before('<span class="arrow"></span>')}),$("nav ul li").click(function(){$(this).children("ul").toggleClass("active"),$(this).children(".arrow").toggleClass("rotate")})});
+//scroll in to view nav//
+function scroll() {
+  var elmnt = document.getElementsByClassName(".presentation-titre");
+  elmnt.scrollIntoView(true);
+}
