@@ -381,9 +381,12 @@ MOBILE NAV STYLES
             }
 
             .text_pres {
-
+                
+                padding: 21%;
                 font-size: 1.3vw;
-                margin: 2%;
+           
+                height:100%;
+                width: 100%;
                 font-family: 'Roboto Slab', serif;
             }
 
@@ -408,8 +411,7 @@ MOBILE NAV STYLES
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-
+    
     .presentation-titre {
         display: flex;
         flex-direction: column;
@@ -932,7 +934,7 @@ MOBILE NAV STYLES
     background-color: #f56982;
     background-size: 100%;
     background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
-    animation: progress-anim-1 10s linear;
+    animation: progress-anim-1 7s linear;
 }
 
 .final__animation-bar-1 span:after {
