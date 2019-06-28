@@ -18,36 +18,49 @@ $menu-background: #353535;
 RESPONSIVE BREAKPOINTS
 **********************/
 @mixin breakpoint($point) {
-    @if $point==1300 {
-        @media (max-width: 1300px) {
-            @content;
-        }
-    }
-
-    @else if $point==715 {
-        @media (max-width: 715px) {
-            @content;
-        }
-    }
+  @if $point == 715 {
+    @media (max-width: 715px) { @content; }
+  }
+  @else if 1300 {
+    @media (max-width: 1300px) { @content; }
+  }
 }
-
-
-
-
 
 
 @import "compass/reset";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/*Mixins */
+
+@mixin alignement-vertical {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin presentation-partie {
+
+    @include alignement-vertical;
+    background: #edf5e3;
+    height: 25vh;
+    text-align: center;
+
+    h2 {
+        font-size: 4vw;
+    }
 
 
-html,
+
+}
+
+
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     font-family: 'Roboto Slab', serif;
-
+    overflow-x:hidden;
 }
 
 
@@ -61,27 +74,28 @@ header {
 
     nav {
         width: 100%;
-
+        background: linear-gradient(to bottom, $menu-background 0%, darken($menu-background,7%) 100%);
         box-shadow: 0px 2px 2px rgba(0, 0, 0, .35);
 
         @include breakpoint(715) {
-            margin: 65px 0 0 0;
+            padding: 65px 0 0 0;
             max-height: 0;
             overflow: hidden;
             transition: all 0.5s ease;
-            background: darken(#262626, 5%);
+            background: darken(#262626, 2%);
+          
         }
     }
 
     nav ul {
-        margin: 0 auto;
-        width: 100%;
+        margin: 0 ;
+        
         list-style: none;
 
         @include breakpoint(715) {
             margin: 0;
             padding: 0;
-            width: 100%;
+
             box-shadow: 0px 1px 3px rgba(0, 0, 0, .7);
             z-index: 15;
 
@@ -92,7 +106,7 @@ header {
         li {
             float: left;
             width: 20%;
-            position: relative;
+            position:relative;
             z-index: 1;
 
             @include breakpoint(715) {
@@ -102,6 +116,7 @@ header {
                 text-align: center;
                 margin: auto;
                 align-items: center;
+                        
             }
 
             a {
@@ -110,8 +125,8 @@ header {
                 text-align: center;
                 color: $link-color;
                 text-decoration: none;
-                border-right: 1px solid darken($menu-background, 10%);
-                text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
+                border-right: 1px solid darken($menu-background,10%);
+                text-shadow: 2px 2px 2px rgba(0, 0, 0,.8);
                 transition: all 0.1s ease;
 
                 &:hover {
@@ -122,12 +137,12 @@ header {
                 }
 
                 @include breakpoint(715) {
-                    display: table;
+                    display:table;
                     margin: 0;
                     padding: 15px 2px;
                     color: white;
                     border-top: 1px solid rgba(0, 0, 0, .15);
-                    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, .03);
+                    box-shadow: inset 0px 1px 3px rgba(255, 255, 255,.03);
                     text-shadow: none;
                     width: 100%;
 
@@ -140,7 +155,8 @@ header {
                 transition: all 0.3s ease;
 
                 @include breakpoint(715) {
-                    max-height: 0;
+                    max-height: 0;  
+                    z-index: 50;
 
                 }
             }
@@ -168,14 +184,19 @@ MOBILE NAV STYLES
 
         @include breakpoint(715) {
             display: table;
+            
         }
     }
 
     .active {
         max-height: 9000px !important;
         transition: all 1s ease;
-
-
+        position: absolute;
+        z-index: 200;
+        li{
+            width: 100%;
+        }
+        
 
 
 
@@ -184,7 +205,7 @@ MOBILE NAV STYLES
     @include breakpoint(715) {
         .arrow {
             display: block;
-            background: url(../images/arrow.png) no-repeat;
+            
             float: right;
             height: 30px;
             width: 30px;
@@ -225,9 +246,7 @@ MOBILE NAV STYLES
 .contenu-accueil {
 
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include alignement-vertical;
 
     text-align: center;
     color: white;
@@ -257,7 +276,7 @@ MOBILE NAV STYLES
         input {
 
 
-            margin: 0;
+
             padding: auto;
             border-radius: 15px;
             margin: 2% 0%;
@@ -273,7 +292,7 @@ MOBILE NAV STYLES
     position: relative;
     top: .2em;
     font-size: 1.4em;
-    color: #FC4538;
+    color: #FC4538;                                 
     -webkit-transform: scale(.9);
     -moz-transform: scale(.9);
     transform: scale(.9);
@@ -322,15 +341,7 @@ MOBILE NAV STYLES
 
 
     .presentation-titre {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: #edf5e3;
-        height: 25vh;
-
-        h2 {
-            font-size: 4vw;
-        }
+        @include presentation-partie;
     }
 
     .photo-text {
@@ -346,9 +357,7 @@ MOBILE NAV STYLES
 
             height: 100%;
             background: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include alignement-vertical;
 
             img {
                 max-width: 25%;
@@ -365,11 +374,10 @@ MOBILE NAV STYLES
             color: white;
             font-size: 1.5vw;
             flex: 1;
-            display: flex;
-            flex-direction: column;
+            @include alignement-vertical;
             align-items: center;
             text-align: left;
-            justify-content: center;
+
             max-width: 50%;
             background: #2F2E33;
             height: 100%;
@@ -381,11 +389,11 @@ MOBILE NAV STYLES
             }
 
             .text_pres {
-                
+
                 padding: 21%;
                 font-size: 1.3vw;
-           
-                height:100%;
+
+                height: 100%;
                 width: 100%;
                 font-family: 'Roboto Slab', serif;
             }
@@ -408,20 +416,10 @@ MOBILE NAV STYLES
 
     height: 100vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    .presentation-titre {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: #edf5e3;
-        height: 25vh;
+    @include alignement-vertical;
 
-        h2 {
-            font-size: 4vw;
-        }
+    .presentation-titre {
+        @include presentation-partie;
     }
 
     .competences {
@@ -454,16 +452,14 @@ MOBILE NAV STYLES
 
             .hjp {
                 width: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include alignement-vertical;
                 z-index: 1;
                 align-items: center;
 
                 margin: 0 auto;
 
                 div {
-                    width: 100%;
+                    width: 80%;
                 }
 
 
@@ -541,16 +537,14 @@ MOBILE NAV STYLES
 
             .arm {
                 width: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include alignement-vertical;
                 z-index: 1;
 
 
 
 
                 div {
-                    width: 100%;
+                    width: 80%;
                 }
 
 
@@ -650,9 +644,7 @@ MOBILE NAV STYLES
             height: 100%;
             width: 50%;
             background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include alignement-vertical;
 
 
 
@@ -687,29 +679,17 @@ MOBILE NAV STYLES
     background-color: #2F2E33;
     background-size: cover;
     font-family: 'Pacifico';
-    display: flex;
-    flex-direction: column;
+    @include alignement-vertical;
     font-family: 'Roboto Slab', serif;
 
 
     .presentation-titre {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: #edf5e3;
-        height: 25vh;
-
-        h2 {
-            font-size: 4vw;
-            color: black;
-        }
+        @include presentation-partie;
     }
 
     h2 {
         color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include alignement-vertical;
         font-size: 4vw;
         text-align: center;
         height: 100%;
@@ -772,51 +752,54 @@ MOBILE NAV STYLES
 
 
 
-
+.contenu-footer {
+    display: flex;
+    height: 75vh;
+}
 
 
 .logos {
     width: 35%;
-    height: 30%;
-    float: left;
-    margin-top: 50vh;
-    transform: translateY(-50%);
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+    a,
+    div {
+        padding: 5% 0;
+        text-align: center;
+
+    }
 
 }
+
+
+
+
 
 .formulaire {
 
     width: 65%;
-    height: 50%;
-    float: right;
-    margin-top: 50vh;
-    transform: translateY(-65%);
+    height: 100%;
+
 }
 
 .presentation-titre {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #edf5e3;
-    height: 25vh;
-    text-align: center;
-
-
-    h2 {
-        font-size: 4vw;
-        color: black;
-    }
-
+    @include presentation-partie;
+    @include alignement-vertical;
 
 }
 
 .contact-form {
     display: flex;
-    width: 50%;
+    margin: auto;
+    width: 100%;
 
+    height: 100%;
     background: rgba(0, 0, 0, 0.8);
-
+    @include alignement-vertical;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -824,12 +807,12 @@ MOBILE NAV STYLES
 .input-fields {
     display: flex;
     flex-direction: column;
-    margin-right: 4%;
+
 }
 
 .input-fields,
 .msg {
-    width: 48%;
+    width: 75%;
 }
 
 .input-fields .input,
@@ -844,7 +827,7 @@ MOBILE NAV STYLES
 }
 
 .msg textarea {
-    height: 212px;
+    height: 20vh;
 }
 
 ::-webkit-input-placeholder {
@@ -872,13 +855,25 @@ MOBILE NAV STYLES
     text-transform: uppercase;
 }
 
-@media screen and (max-width: 600px) {
-    header#particles-js {
-        height: 400px;
+footer {
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    background-size: cover;
+}
+
+
+/*
+@media screen and (min-width: 590px) and (max-width: 1200px) {
+
+
+  header#particles-js {
+        height: 300px;
     }
 
     .contenu-accueil {
-        height: 320px;
+        height: 200px;
 
         a {
             padding-right: 30%;
@@ -887,54 +882,287 @@ MOBILE NAV STYLES
 
     }
 
+    #conteneur-pres {
+
+        height: 270px;
 
 
+        .presentation-titre {
+            height: 65px;
+        }
 
-
-    .logos {
-        display: block;
+        .photo-text {
+            height: 200px;
+        }
 
     }
 
-
-    .contact-form {
-        flex-direction: column;
-        width: 100%;
+    #slide2 {
+        height: 250px;
     }
 
-    .msg textarea {
-        height: 60%;
+    #slide3 {
+
+        height: 300px;
+
+        .presentation-titre {
+
+            height: 65px;
+        }
+
+
+
+        .container {
+            height: 150px;
+        }
+
+
     }
 
-    .input-fields,
-    .msg {
-        width: 80%;
+    footer {
+
+        height: 
+
+        .presentation-titre {
+
+            height: 
+        }
+
+        .contenu-footer {
+
+            height: 
+           
+            .logos {
+
+                height: 
+
+                a,
+                div {
+                    padding: 5% 0;
+                    height: ;
+                }
+            }
+
+            .formulaire {
+                width: 
+                height: 
+                position: relative;
+
+                .contact-form {
+
+
+                    height: 
+
+
+                    .input-fields {
+                        position: absolute;
+                        top: 
+                        height: 
+                        width: 
+                        
+
+                        .input {
+                            textarea {}
+
+                            height: 
+                        }
+
+                    }
+
+                    .msg {
+                     
+                       position: 
+                        height: 
+                        margin-top: 
+                       
+                        textarea {
+                            height: 
+                         
+                        }
+
+                    
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
+}
+
+
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 589px) {
+    header#particles-js {
+        height: 300px;
+    }
+
+    .contenu-accueil {
+        height: 200px;
+
+        a {
+            padding-right: 30%;
+        }
+
+
+    }
+
+    #conteneur-pres {
+
+        height: 270px;
+
+
+        .presentation-titre {
+            height: 65px;
+        }
+
+        .photo-text {
+            height: 200px;
+        }
+
+    }
+
+    #slide2 {
+        height: 250px;
+    }
+
+    #slide3 {
+
+        height: 300px;
+
+        .presentation-titre {
+
+            height: 65px;
+        }
+
+
+
+        .container {
+            height: 150px;
+        }
+
+
+    }
+
+    footer {
+
+        height: 420px;
+
+        .presentation-titre {
+
+            height: 70px;
+        }
+
+        .contenu-footer {
+
+            height: 430px;
+           
+            .logos {
+
+                height: 350px;
+
+                a,
+                div {
+                    padding: 5% 0;
+                    height: 60px;
+                }
+            }
+
+            .formulaire {
+                width: 70%;
+                height: 350px;
+ position: relative;
+
+                .contact-form {
+
+
+                    height: 350px;
+
+
+                    .input-fields {
+                        position: absolute;
+                        top: 1em;
+                        height: 150px;
+                        width: 70%;
+                        
+
+                        .input {
+                            textarea {}
+
+                            height: 5px;
+                        }
+
+                    }
+
+                    .msg {
+                     
+                       position: relative;
+                        height: 50px;
+                        margin-top: 70px;
+                       
+                        textarea {
+                            height: 15px;
+                         
+                        }
+
+                    
+                    }
+
+
+                }
+
+
+            }
+        }
     }
 }
 
 ///////////////////////////
-.final__animation-bar-1 {
+.final__animation-bar-1 , .final__animation-bar-2 ,.final__animation-bar-3 , .final__animation-bar-4 , .final__animation-bar-5 , .final__animation-bar-6 {
     position: relative;
     display: block;
-    padding: 5px;
-    font-size: 16px;
-    line-height: 16px;
+
+    font-size: 1.7vw;
+    line-height: 0.9vw;
     border-radius: 30px;
     background: rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+
 }
 
 .final__animation-bar-1 span {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    height: 20px;
+    height: 2vw;
     border-radius: 10px 0 0 10px;
-    overflow: hidden;
+    overflow: hidden;                   
     background-color: #f56982;
     background-size: 100%;
-    background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
-    animation: progress-anim-1 7s linear;
+    background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
+    animation: progress-anim-1 5s linear;
 }
 
 .final__animation-bar-1 span:after {
@@ -957,6 +1185,183 @@ MOBILE NAV STYLES
     animation: progress-anim-1-after 0.5s infinite linear;
 }
 
+.final__animation-bar-2 span{
+
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2vw;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;                   
+    background-color: #f56982;
+    background-size: 100%;
+    background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
+    animation: progress-anim-2 5s linear;  
+}
+
+.final__animation-bar-2 span:after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-size: 100%;
+    background-image: linear-gradient(45deg, #ffffff 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 50%,
+        #ffffff 50%,
+        #ffffff 75%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0));
+    background-size: 30px 30px;
+    opacity: 0.3;
+    animation: progress-anim-2-after 0.5s infinite linear;
+}
+
+.final__animation-bar-3 span{
+
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2vw;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;                   
+    background-color: #f56982;
+    background-size: 100%;
+    background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
+    animation: progress-anim-3 5s linear;  
+}
+
+.final__animation-bar-3 span:after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-size: 100%;
+    background-image: linear-gradient(45deg, #ffffff 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 50%,
+        #ffffff 50%,
+        #ffffff 75%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0));
+    background-size: 30px 30px;
+    opacity: 0.3;
+    animation: progress-anim-3-after 0.5s infinite linear;
+}
+
+
+.final__animation-bar-4 span{
+
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2vw;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;                   
+    background-color: #f56982;
+    background-size: 100%;
+    background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
+    animation: progress-anim-4 5s linear;  
+}
+
+.final__animation-bar-4 span:after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-size: 100%;
+    background-image: linear-gradient(45deg, #ffffff 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 50%,
+        #ffffff 50%,
+        #ffffff 75%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0));
+    background-size: 30px 30px;
+    opacity: 0.3;
+    animation: progress-anim-4-after 0.5s infinite linear;
+}
+.final__animation-bar-5 span{
+
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2vw;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;                   
+    background-color: #f56982;
+    background-size: 100%;
+    background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
+    animation: progress-anim-5 5s linear;  
+}
+
+.final__animation-bar-5 span:after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-size: 100%;
+    background-image: linear-gradient(45deg, #ffffff 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 50%,
+        #ffffff 50%,
+        #ffffff 75%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0));
+    background-size: 30px 30px;
+    opacity: 0.3;
+    animation: progress-anim-5-after 0.5s infinite linear;
+}
+
+.final__animation-bar-6 span{
+
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2vw;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;                   
+    background-color: #f56982;
+    background-size: 100%;
+    background-image: linear-gradient(to top, #6a85b6 0%, #3A5199 100%);
+    animation: progress-anim-6 5s linear;  
+}
+
+.final__animation-bar-6 span:after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-size: 100%;
+    background-image: linear-gradient(45deg, #ffffff 25%,
+        rgba(0, 0, 0, 0) 25%,
+        rgba(0, 0, 0, 0) 50%,
+        #ffffff 50%,
+        #ffffff 75%,
+        rgba(0, 0, 0, 0) 75%,
+        rgba(0, 0, 0, 0));
+    background-size: 30px 30px;
+    opacity: 0.3;
+    animation: progress-anim-6-after 0.5s infinite linear;
+}
+
+
+
 
 @-webkit-keyframes progress-anim-1 {
     0% {
@@ -964,7 +1369,7 @@ MOBILE NAV STYLES
     }
 
     50% {
-        width: 50%;
+        width: 40%;
     }
 
     100% {
@@ -972,19 +1377,84 @@ MOBILE NAV STYLES
     }
 }
 
-@keyframes progress-anim-1 {
+@keyframes progress-anim-2{
     0% {
         width: 0%;
     }
 
     50% {
+        width: 25%;
+    }
+
+    100% {
         width: 50%;
+    }
+}
+
+@keyframes progress-anim-3{
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 8%;
+    }
+
+    100% {
+        width: 15%;
+    }
+}
+
+@keyframes progress-anim-4{
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 15%;
+    }
+
+    100% {
+        width: 30%;
+    }
+}
+
+@keyframes progress-anim-5{
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 15%;
+    }
+
+    100% {
+        width: 30%;
+    }
+}
+
+@keyframes progress-anim-6{
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 40%;
     }
 
     100% {
         width: 80%;
     }
 }
+
+
+
+
+
+
+
+
+
 
 .facebook:hover,
 .linkedin:hover,
@@ -1008,13 +1478,6 @@ MOBILE NAV STYLES
 
 }
 
-footer {
-    font-family: 'Roboto Slab', serif;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    background-size: cover;
-}
 
 
 
