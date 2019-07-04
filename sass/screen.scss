@@ -1,10 +1,10 @@
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/*********************
+
+/*
 VARIABLES
-**********************/
+*/
 $link-color:white;
 $link-hover:#00aedb;
 $link-vertical-padding:20px;
@@ -360,10 +360,12 @@ MOBILE NAV STYLES
             @include alignement-vertical;
 
             img {
-                max-width: 25%;
-
-
-
+                width: 18vw;
+                height: 24vw;
+                border-radius: 50%;
+                border: solid 1px #2F2E33;
+                overflow: hidden;
+                box-shadow: 0.75vw 1vw 1vw 0.6vw rgb(47, 46, 51) ;
                 cursor: pointer;
 
 
@@ -866,155 +868,6 @@ footer {
 }
 
 
-/*
-@media screen and (min-width: 590px) and (max-width: 1200px) {
-
-
-  header#particles-js {
-        height: 300px;
-    }
-
-    .contenu-accueil {
-        height: 200px;
-
-        a {
-            padding-right: 30%;
-        }
-
-
-    }
-
-    #conteneur-pres {
-
-        height: 270px;
-
-
-        .presentation-titre {
-            height: 65px;
-        }
-
-        .photo-text {
-            height: 200px;
-        }
-
-    }
-
-    #slide2 {
-        height: 250px;
-    }
-
-    #slide3 {
-
-        height: 300px;
-
-        .presentation-titre {
-
-            height: 65px;
-        }
-
-
-
-        .container {
-            height: 150px;
-        }
-
-
-    }
-
-    footer {
-
-        height: 
-
-        .presentation-titre {
-
-            height: 
-        }
-
-        .contenu-footer {
-
-            height: 
-           
-            .logos {
-
-                height: 
-
-                a,
-                div {
-                    padding: 5% 0;
-                    height: ;
-                }
-            }
-
-            .formulaire {
-                width: 
-                height: 
-                position: relative;
-
-                .contact-form {
-
-
-                    height: 
-
-
-                    .input-fields {
-                        position: absolute;
-                        top: 
-                        height: 
-                        width: 
-                        
-
-                        .input {
-                            textarea {}
-
-                            height: 
-                        }
-
-                    }
-
-                    .msg {
-                     
-                       position: 
-                        height: 
-                        margin-top: 
-                       
-                        textarea {
-                            height: 
-                         
-                        }
-
-                    
-                    }
-
-
-                }
-
-
-            }
-        }
-    }
-}
-
-
-
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 589px) {
     header#particles-js {
@@ -1361,7 +1214,27 @@ footer {
     opacity: 0.3;
     animation: progress-anim-6-after 0.5s infinite linear;
 }
+.facebook:hover,
+.linkedin:hover,
+.github:hover {
+    font-size: .8em;
+    text-align: center;
 
+    background-color: #111;
+
+
+    text-transform: uppercase;
+    position: relative;
+    font-weight: bold;
+
+    -webkit-animation: bounce 1.2s ease-out;
+    -moz-animation: bounce 800ms ease-out;
+    -o-animation: bounce 800ms ease-out;
+    animation: bounce 1.2s ease-out;
+
+
+
+}
 
 
 
@@ -1450,40 +1323,6 @@ footer {
 }
 
 
-
-
-
-
-
-
-
-
-.facebook:hover,
-.linkedin:hover,
-.github:hover {
-    font-size: .8em;
-    text-align: center;
-
-    background-color: #111;
-
-
-    text-transform: uppercase;
-    position: relative;
-    font-weight: bold;
-
-    -webkit-animation: bounce 1.2s ease-out;
-    -moz-animation: bounce 800ms ease-out;
-    -o-animation: bounce 800ms ease-out;
-    animation: bounce 1.2s ease-out;
-
-
-
-}
-
-
-
-
-
 @keyframes bounce {
 
     0% {
@@ -1541,11 +1380,6 @@ footer {
         padding-bottom: 9px;
         opacity: 1;
     }
-
-
-
-
-
 
 
 }

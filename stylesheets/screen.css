@@ -1,10 +1,10 @@
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/*********************
+
+/*
 VARIABLES
-**********************/
+*/
 /*Controls Menu top & bottom padding*/
 /*Contols Menu left & right padding*/
 /*Control Menu Color Scheme*/
@@ -369,10 +369,15 @@ header .active li {
 }
 /* line 362, ../sass/screen.scss */
 #conteneur-pres .photo-text .moi img {
-  max-width: 25%;
+  width: 18vw;
+  height: 24vw;
+  border-radius: 50%;
+  border: solid 1px #2F2E33;
+  overflow: hidden;
+  box-shadow: 0.75vw 1vw 1vw 0.6vw #2f2e33;
   cursor: pointer;
 }
-/* line 373, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 #conteneur-pres .photo-text .presentation {
   color: white;
   font-size: 1.2vw;
@@ -389,15 +394,15 @@ header .active li {
   font-family: 'Roboto Slab', serif;
   padding: 10% 10%;
 }
-/* line 387, ../sass/screen.scss */
+/* line 389, ../sass/screen.scss */
 #conteneur-pres .photo-text .presentation h3 {
   font-size: 2vw;
 }
-/* line 391, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 #conteneur-pres .photo-text .presentation p {
   margin-bottom: 0;
 }
-/* line 394, ../sass/screen.scss */
+/* line 396, ../sass/screen.scss */
 #conteneur-pres .photo-text .presentation p .text_pres {
   font-size: 1vw;
   height: 100%;
@@ -405,13 +410,13 @@ header .active li {
   font-family: 'Roboto Slab', serif;
 }
 
-/* line 412, ../sass/screen.scss */
+/* line 414, ../sass/screen.scss */
 .slide_inside {
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 417, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 #slide2 {
   height: 100vh;
   width: 100%;
@@ -419,7 +424,7 @@ header .active li {
   flex-direction: column;
   justify-content: center;
 }
-/* line 423, ../sass/screen.scss */
+/* line 425, ../sass/screen.scss */
 #slide2 .presentation-titre {
   display: flex;
   flex-direction: column;
@@ -432,25 +437,25 @@ header .active li {
 #slide2 .presentation-titre h2 {
   font-size: 4vw;
 }
-/* line 427, ../sass/screen.scss */
+/* line 429, ../sass/screen.scss */
 #slide2 .competences {
   display: flex;
   flex-direction: row;
   height: 75vh;
 }
-/* line 432, ../sass/screen.scss */
+/* line 434, ../sass/screen.scss */
 #slide2 .competences .wrapper2 {
   width: 50%;
   display: flex;
   background: #2F2E33;
 }
-/* line 438, ../sass/screen.scss */
+/* line 440, ../sass/screen.scss */
 #slide2 .competences .wrapper2 h1 {
   text-align: center;
   text-transform: uppercase;
   margin-top: 40px;
 }
-/* line 446, ../sass/screen.scss */
+/* line 448, ../sass/screen.scss */
 #slide2 .competences .wrapper2 h2 {
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
@@ -458,7 +463,7 @@ header .active li {
   font-weight: bold;
   color: white;
 }
-/* line 455, ../sass/screen.scss */
+/* line 457, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .hjp {
   width: 50%;
   display: flex;
@@ -468,16 +473,16 @@ header .active li {
   align-items: center;
   margin: 0 auto;
 }
-/* line 463, ../sass/screen.scss */
+/* line 465, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .hjp div {
   width: 80%;
 }
-/* line 469, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .hjp div#lang {
   margin: 0 auto;
   width: 80%;
 }
-/* line 473, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .hjp div#lang .line {
   height: 25px;
   max-width: 80%;
@@ -487,7 +492,7 @@ header .active li {
   padding: 0 0 0 10px;
   position: relative;
 }
-/* line 484, ../sass/screen.scss */
+/* line 486, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .hjp div#lang .line :before {
   content: '';
   width: 100%;
@@ -499,7 +504,7 @@ header .active li {
   background: #d2d6d7;
   border-radius: 15px;
 }
-/* line 499, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .hjp div#lang .line :after {
   content: '';
   background: #333;
@@ -514,7 +519,7 @@ header .active li {
   z-index: -1;
   border-radius: 15px;
 }
-/* line 540, ../sass/screen.scss */
+/* line 542, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm {
   width: 50%;
   display: flex;
@@ -522,16 +527,16 @@ header .active li {
   justify-content: center;
   z-index: 1;
 }
-/* line 548, ../sass/screen.scss */
+/* line 550, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div {
   width: 80%;
 }
-/* line 554, ../sass/screen.scss */
+/* line 556, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang {
   margin: 0 auto;
   width: 80%;
 }
-/* line 560, ../sass/screen.scss */
+/* line 562, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang .line {
   height: 25px;
   max-width: 80%;
@@ -541,19 +546,19 @@ header .active li {
   padding: 0 0 0 10px;
   position: relative;
 }
-/* line 571, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang .line .line4:after {
   max-width: 30%;
 }
-/* line 576, ../sass/screen.scss */
+/* line 578, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang .line .line5:after {
   max-width: 20%;
 }
-/* line 580, ../sass/screen.scss */
+/* line 582, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang .line .line6:after {
   max-width: 80%;
 }
-/* line 585, ../sass/screen.scss */
+/* line 587, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang .line :before {
   content: '';
   width: 100%;
@@ -565,7 +570,7 @@ header .active li {
   background: #d2d6d7;
   border-radius: 15px;
 }
-/* line 598, ../sass/screen.scss */
+/* line 600, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm div#lang .line :after {
   content: '';
   background: #333;
@@ -580,11 +585,11 @@ header .active li {
   z-index: -1;
   border-radius: 15px;
 }
-/* line 622, ../sass/screen.scss */
+/* line 624, ../sass/screen.scss */
 #slide2 .competences .wrapper2 .arm .lang {
   width: 80%;
 }
-/* line 645, ../sass/screen.scss */
+/* line 647, ../sass/screen.scss */
 #slide2 .competences .others {
   height: 100%;
   width: 50%;
@@ -593,12 +598,12 @@ header .active li {
   flex-direction: column;
   justify-content: center;
 }
-/* line 653, ../sass/screen.scss */
+/* line 655, ../sass/screen.scss */
 #slide2 .competences .others .others-details img {
   width: 30%;
 }
 
-/* line 678, ../sass/screen.scss */
+/* line 680, ../sass/screen.scss */
 #slide3 {
   height: 100vh;
   width: 100%;
@@ -610,7 +615,7 @@ header .active li {
   justify-content: center;
   font-family: 'Roboto Slab', serif;
 }
-/* line 688, ../sass/screen.scss */
+/* line 690, ../sass/screen.scss */
 #slide3 .presentation-titre {
   display: flex;
   flex-direction: column;
@@ -623,7 +628,7 @@ header .active li {
 #slide3 .presentation-titre h2 {
   font-size: 4vw;
 }
-/* line 692, ../sass/screen.scss */
+/* line 694, ../sass/screen.scss */
 #slide3 h2 {
   color: black;
   display: flex;
@@ -633,7 +638,7 @@ header .active li {
   text-align: center;
   height: 100%;
 }
-/* line 701, ../sass/screen.scss */
+/* line 703, ../sass/screen.scss */
 #slide3 .container {
   height: 70vh;
   display: grid;
@@ -645,11 +650,11 @@ header .active li {
   grid-template-rows: 1fr 1fr;
   grid-auto-rows: 200px;
 }
-/* line 714, ../sass/screen.scss */
+/* line 716, ../sass/screen.scss */
 #slide3 .container img {
   width: 100%;
 }
-/* line 719, ../sass/screen.scss */
+/* line 721, ../sass/screen.scss */
 #slide3 .container .cell {
   color: white;
   font-size: 3rem;
@@ -658,37 +663,37 @@ header .active li {
   margin: 4px;
   transition: width 1s, height 1s;
 }
-/* line 730, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 #slide3 .container .cell :hover {
   opacity: 0.7;
 }
 
-/* line 757, ../sass/screen.scss */
+/* line 759, ../sass/screen.scss */
 .contenu-footer {
   display: flex;
   height: 75vh;
 }
 
-/* line 763, ../sass/screen.scss */
+/* line 765, ../sass/screen.scss */
 .logos {
   width: 35%;
   display: flex;
   flex-direction: column;
 }
-/* line 771, ../sass/screen.scss */
+/* line 773, ../sass/screen.scss */
 .logos a,
 .logos div {
   padding: 5% 0;
   text-align: center;
 }
 
-/* line 784, ../sass/screen.scss */
+/* line 786, ../sass/screen.scss */
 .formulaire {
   width: 65%;
   height: 100%;
 }
 
-/* line 791, ../sass/screen.scss */
+/* line 793, ../sass/screen.scss */
 .presentation-titre {
   display: flex;
   flex-direction: column;
@@ -705,7 +710,7 @@ header .active li {
   font-size: 4vw;
 }
 
-/* line 797, ../sass/screen.scss */
+/* line 799, ../sass/screen.scss */
 .contact-form {
   display: flex;
   margin: auto;
@@ -719,19 +724,19 @@ header .active li {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* line 809, ../sass/screen.scss */
+/* line 811, ../sass/screen.scss */
 .input-fields {
   display: flex;
   flex-direction: column;
 }
 
-/* line 815, ../sass/screen.scss */
+/* line 817, ../sass/screen.scss */
 .input-fields,
 .msg {
   width: 75%;
 }
 
-/* line 820, ../sass/screen.scss */
+/* line 822, ../sass/screen.scss */
 .input-fields .input,
 .msg textarea {
   margin: 10px 0;
@@ -743,30 +748,30 @@ header .active li {
   width: 100%;
 }
 
-/* line 831, ../sass/screen.scss */
+/* line 833, ../sass/screen.scss */
 .msg textarea {
   height: 20vh;
 }
 
-/* line 835, ../sass/screen.scss */
+/* line 837, ../sass/screen.scss */
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #c5ecfd;
 }
 
-/* line 840, ../sass/screen.scss */
+/* line 842, ../sass/screen.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #c5ecfd;
 }
 
-/* line 845, ../sass/screen.scss */
+/* line 847, ../sass/screen.scss */
 :-ms-input-placeholder {
   /* IE 10+ */
   color: #c5ecfd;
 }
 
-/* line 850, ../sass/screen.scss */
+/* line 852, ../sass/screen.scss */
 .btn {
   background: #39b7dd;
   text-align: center;
@@ -777,7 +782,7 @@ header .active li {
   text-transform: uppercase;
 }
 
-/* line 860, ../sass/screen.scss */
+/* line 862, ../sass/screen.scss */
 footer {
   font-family: 'Roboto Slab', serif;
   width: 100%;
@@ -786,239 +791,107 @@ footer {
   background-size: cover;
 }
 
-/*
-@media screen and (min-width: 590px) and (max-width: 1200px) {
-
-
-  header#particles-js {
-        height: 300px;
-    }
-
-    .contenu-accueil {
-        height: 200px;
-
-        a {
-            padding-right: 30%;
-        }
-
-
-    }
-
-    #conteneur-pres {
-
-        height: 270px;
-
-
-        .presentation-titre {
-            height: 65px;
-        }
-
-        .photo-text {
-            height: 200px;
-        }
-
-    }
-
-    #slide2 {
-        height: 250px;
-    }
-
-    #slide3 {
-
-        height: 300px;
-
-        .presentation-titre {
-
-            height: 65px;
-        }
-
-
-
-        .container {
-            height: 150px;
-        }
-
-
-    }
-
-    footer {
-
-        height: 
-
-        .presentation-titre {
-
-            height: 
-        }
-
-        .contenu-footer {
-
-            height: 
-           
-            .logos {
-
-                height: 
-
-                a,
-                div {
-                    padding: 5% 0;
-                    height: ;
-                }
-            }
-
-            .formulaire {
-                width: 
-                height: 
-                position: relative;
-
-                .contact-form {
-
-
-                    height: 
-
-
-                    .input-fields {
-                        position: absolute;
-                        top: 
-                        height: 
-                        width: 
-                        
-
-                        .input {
-                            textarea {}
-
-                            height: 
-                        }
-
-                    }
-
-                    .msg {
-                     
-                       position: 
-                        height: 
-                        margin-top: 
-                       
-                        textarea {
-                            height: 
-                         
-                        }
-
-                    
-                    }
-
-
-                }
-
-
-            }
-        }
-    }
-}
-
-
-
-}
-*/
 @media screen and (max-width: 589px) {
-  /* line 1020, ../sass/screen.scss */
+  /* line 873, ../sass/screen.scss */
   header#particles-js {
     height: 300px;
   }
 
-  /* line 1024, ../sass/screen.scss */
+  /* line 877, ../sass/screen.scss */
   .contenu-accueil {
     height: 200px;
   }
-  /* line 1027, ../sass/screen.scss */
+  /* line 880, ../sass/screen.scss */
   .contenu-accueil a {
     padding-right: 30%;
   }
 
-  /* line 1034, ../sass/screen.scss */
+  /* line 887, ../sass/screen.scss */
   #conteneur-pres {
     height: 270px;
   }
-  /* line 1039, ../sass/screen.scss */
+  /* line 892, ../sass/screen.scss */
   #conteneur-pres .presentation-titre {
     height: 65px;
   }
-  /* line 1043, ../sass/screen.scss */
+  /* line 896, ../sass/screen.scss */
   #conteneur-pres .photo-text {
     height: 200px;
   }
 
-  /* line 1049, ../sass/screen.scss */
+  /* line 902, ../sass/screen.scss */
   #slide2 {
     height: 250px;
   }
 
-  /* line 1053, ../sass/screen.scss */
+  /* line 906, ../sass/screen.scss */
   #slide3 {
     height: 300px;
   }
-  /* line 1057, ../sass/screen.scss */
+  /* line 910, ../sass/screen.scss */
   #slide3 .presentation-titre {
     height: 65px;
   }
-  /* line 1064, ../sass/screen.scss */
+  /* line 917, ../sass/screen.scss */
   #slide3 .container {
     height: 150px;
   }
 
-  /* line 1071, ../sass/screen.scss */
+  /* line 924, ../sass/screen.scss */
   footer {
     height: 420px;
   }
-  /* line 1075, ../sass/screen.scss */
+  /* line 928, ../sass/screen.scss */
   footer .presentation-titre {
     height: 70px;
   }
-  /* line 1080, ../sass/screen.scss */
+  /* line 933, ../sass/screen.scss */
   footer .contenu-footer {
     height: 430px;
   }
-  /* line 1084, ../sass/screen.scss */
+  /* line 937, ../sass/screen.scss */
   footer .contenu-footer .logos {
     height: 350px;
   }
-  /* line 1088, ../sass/screen.scss */
+  /* line 941, ../sass/screen.scss */
   footer .contenu-footer .logos a,
   footer .contenu-footer .logos div {
     padding: 5% 0;
     height: 60px;
   }
-  /* line 1095, ../sass/screen.scss */
+  /* line 948, ../sass/screen.scss */
   footer .contenu-footer .formulaire {
     width: 70%;
     height: 350px;
     position: relative;
   }
-  /* line 1100, ../sass/screen.scss */
+  /* line 953, ../sass/screen.scss */
   footer .contenu-footer .formulaire .contact-form {
     height: 350px;
   }
-  /* line 1106, ../sass/screen.scss */
+  /* line 959, ../sass/screen.scss */
   footer .contenu-footer .formulaire .contact-form .input-fields {
     position: absolute;
     top: 1em;
     height: 150px;
     width: 70%;
   }
-  /* line 1113, ../sass/screen.scss */
+  /* line 966, ../sass/screen.scss */
   footer .contenu-footer .formulaire .contact-form .input-fields .input {
     height: 5px;
   }
-  /* line 1121, ../sass/screen.scss */
+  /* line 974, ../sass/screen.scss */
   footer .contenu-footer .formulaire .contact-form .msg {
     position: relative;
     height: 50px;
     margin-top: 70px;
   }
-  /* line 1127, ../sass/screen.scss */
+  /* line 980, ../sass/screen.scss */
   footer .contenu-footer .formulaire .contact-form .msg textarea {
     height: 15px;
   }
 }
-/* line 1145, ../sass/screen.scss */
+/* line 998, ../sass/screen.scss */
 .final__animation-bar-1, .final__animation-bar-2, .final__animation-bar-3, .final__animation-bar-4, .final__animation-bar-5, .final__animation-bar-6 {
   position: relative;
   display: block;
@@ -1029,7 +902,7 @@ footer {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
 }
 
-/* line 1157, ../sass/screen.scss */
+/* line 1010, ../sass/screen.scss */
 .final__animation-bar-1 span {
   position: relative;
   display: inline-block;
@@ -1043,7 +916,7 @@ footer {
   animation: progress-anim-1 5s linear;
 }
 
-/* line 1170, ../sass/screen.scss */
+/* line 1023, ../sass/screen.scss */
 .final__animation-bar-1 span:after {
   position: absolute;
   top: 0;
@@ -1058,7 +931,7 @@ footer {
   animation: progress-anim-1-after 0.5s infinite linear;
 }
 
-/* line 1190, ../sass/screen.scss */
+/* line 1043, ../sass/screen.scss */
 .final__animation-bar-2 span {
   position: relative;
   display: inline-block;
@@ -1072,7 +945,7 @@ footer {
   animation: progress-anim-2 5s linear;
 }
 
-/* line 1204, ../sass/screen.scss */
+/* line 1057, ../sass/screen.scss */
 .final__animation-bar-2 span:after {
   position: absolute;
   top: 0;
@@ -1087,7 +960,7 @@ footer {
   animation: progress-anim-2-after 0.5s infinite linear;
 }
 
-/* line 1225, ../sass/screen.scss */
+/* line 1078, ../sass/screen.scss */
 .final__animation-bar-3 span {
   position: relative;
   display: inline-block;
@@ -1101,7 +974,7 @@ footer {
   animation: progress-anim-3 5s linear;
 }
 
-/* line 1239, ../sass/screen.scss */
+/* line 1092, ../sass/screen.scss */
 .final__animation-bar-3 span:after {
   position: absolute;
   top: 0;
@@ -1116,7 +989,7 @@ footer {
   animation: progress-anim-3-after 0.5s infinite linear;
 }
 
-/* line 1261, ../sass/screen.scss */
+/* line 1114, ../sass/screen.scss */
 .final__animation-bar-4 span {
   position: relative;
   display: inline-block;
@@ -1130,7 +1003,7 @@ footer {
   animation: progress-anim-4 5s linear;
 }
 
-/* line 1275, ../sass/screen.scss */
+/* line 1128, ../sass/screen.scss */
 .final__animation-bar-4 span:after {
   position: absolute;
   top: 0;
@@ -1145,7 +1018,7 @@ footer {
   animation: progress-anim-4-after 0.5s infinite linear;
 }
 
-/* line 1295, ../sass/screen.scss */
+/* line 1148, ../sass/screen.scss */
 .final__animation-bar-5 span {
   position: relative;
   display: inline-block;
@@ -1159,7 +1032,7 @@ footer {
   animation: progress-anim-5 5s linear;
 }
 
-/* line 1309, ../sass/screen.scss */
+/* line 1162, ../sass/screen.scss */
 .final__animation-bar-5 span:after {
   position: absolute;
   top: 0;
@@ -1174,7 +1047,7 @@ footer {
   animation: progress-anim-5-after 0.5s infinite linear;
 }
 
-/* line 1330, ../sass/screen.scss */
+/* line 1183, ../sass/screen.scss */
 .final__animation-bar-6 span {
   position: relative;
   display: inline-block;
@@ -1188,7 +1061,7 @@ footer {
   animation: progress-anim-6 5s linear;
 }
 
-/* line 1344, ../sass/screen.scss */
+/* line 1197, ../sass/screen.scss */
 .final__animation-bar-6 span:after {
   position: absolute;
   top: 0;
@@ -1201,6 +1074,22 @@ footer {
   background-size: 30px 30px;
   opacity: 0.3;
   animation: progress-anim-6-after 0.5s infinite linear;
+}
+
+/* line 1217, ../sass/screen.scss */
+.facebook:hover,
+.linkedin:hover,
+.github:hover {
+  font-size: .8em;
+  text-align: center;
+  background-color: #111;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: bold;
+  -webkit-animation: bounce 1.2s ease-out;
+  -moz-animation: bounce 800ms ease-out;
+  -o-animation: bounce 800ms ease-out;
+  animation: bounce 1.2s ease-out;
 }
 
 @-webkit-keyframes progress-anim-1 {
@@ -1269,22 +1158,6 @@ footer {
     width: 80%;
   }
 }
-/* line 1461, ../sass/screen.scss */
-.facebook:hover,
-.linkedin:hover,
-.github:hover {
-  font-size: .8em;
-  text-align: center;
-  background-color: #111;
-  text-transform: uppercase;
-  position: relative;
-  font-weight: bold;
-  -webkit-animation: bounce 1.2s ease-out;
-  -moz-animation: bounce 800ms ease-out;
-  -o-animation: bounce 800ms ease-out;
-  animation: bounce 1.2s ease-out;
-}
-
 @keyframes bounce {
   0% {
     transform: translateY(0%);
