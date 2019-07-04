@@ -372,32 +372,34 @@ MOBILE NAV STYLES
 
         .presentation {
             color: white;
-            font-size: 1.5vw;
+            font-size: 1.2vw;
             flex: 1;
             @include alignement-vertical;
             align-items: center;
-            text-align: left;
+            text-align: center;
 
             max-width: 50%;
             background: #2F2E33;
             height: 100%;
             margin-bottom: 0;
             font-family: 'Roboto Slab', serif;
-
+            padding: 10% 10%;
             h3 {
                 font-size: 2vw;
             }
 
+            p{
+                margin-bottom: 0;
+            
             .text_pres {
 
-                padding: 21%;
-                font-size: 1.3vw;
+                font-size: 1vw;
 
                 height: 100%;
                 width: 100%;
                 font-family: 'Roboto Slab', serif;
             }
-
+        }
         }
 
 
